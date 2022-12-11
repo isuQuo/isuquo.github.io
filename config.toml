@@ -1,1 +1,21 @@
+baseURL = 'https://isuquo.github.io'
+languageCode = 'en-us'
+title = 'My blog'
+theme = 'PaperMod'
 
+[author]
+name = "Reece Burke"
+
+[params]
+  authorName = "isuquo"
+  hideFooter = true
+
+  [params.homeInfoParams]
+    Content = """Publishing my reverse engineering adventures."""
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/isuquo'
+  [[params.socialIcons]]
+    name = 'linkedin'
+    url = 'https://www.linkedin.com/in/reece-burke/'
