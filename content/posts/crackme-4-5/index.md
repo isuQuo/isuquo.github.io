@@ -1,6 +1,6 @@
 ---
 title: "Crackme challenge #4 & #5"
-date: 2019-12
+date: 2019-12-01
 ---
 
 Today we'll be looking at two ringzer0 Reverse Engineering challenges called "Windows x86 reversing is cool" and "Windows API for the win". Both challenges are worth 3 and 4 points respectively.

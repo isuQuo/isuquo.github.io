@@ -1,6 +1,6 @@
 ---
 title: "Crackme challenge #3"
-date: 2019-11
+date: 2019-11-27
 ---
 
 Today we'll be looking at a ringzer0 challenge called "Crack Me 1" made by Mr.Un1k0d3r and can be found here: https://ringzer0ctf.com/challenges/9 - the challenge is worth 3 points.

@@ -1,6 +1,6 @@
 ---
 title: "Flare-on 2019 challenge #3"
-date: 2019-10
+date: 2019-10-06
 ---
 
 Welcome to the third Flare-on 2019 challenge write up. This time we'll be looking at an application called FlareBear, which is also the name of the challenge.

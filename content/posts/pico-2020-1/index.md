@@ -1,6 +1,6 @@
 ---
 title: "picoCTF Vault Door Challenges"
-date: 2020-01
+date: 2020-01-11
 ---
 
 Today we'll be looking at a series of challenges created during the picoCTF event. I was unfortunately not able to complete these during the event as the event had ended before I got a chance to see what it's all about.

@@ -1,6 +1,6 @@
 ---
 title: "Flare-on 2019 challenge #3"
-date: 2019-10
+date: 2019-10-06
 ---
 
 Welcome to my first Flare-on 2019 challenge write up. This challenge is called Memecat Battlestation.

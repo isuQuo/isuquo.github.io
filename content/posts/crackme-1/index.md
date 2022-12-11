@@ -1,6 +1,6 @@
 ---
 title: "Crackme challenge #1"
-date: 2019-09
+date: 2019-09-25
 ---
 
 # 7eRoM - 1st one challenge

@@ -1,6 +1,6 @@
 ---
 title: "Operation Chimera 2019 - Digital Forensics Challenge"
-date: 2020-02
+date: 2020-02-11
 ---
 
 Operation Chimera was a course created by Security Blue Team. It ran from the 1st of October to the 31st of November. Various modules were released during this time to give the user an insight into the world of security and the challenges that may lie ahead.

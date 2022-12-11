@@ -1,6 +1,6 @@
 ---
 title: "SBTVIP CTF Challenges"
-date: 2020-02
+date: 2020-02-29
 ---
 
 Over the past four weeks, SecurityBlue.Team have released their very first CTF event. During the first two weeks, the CTF was only available to VIP members. The last two weeks were open to the public. As it stands, there are currently over 300 participants. During the VIP tenure, there were ~50 participants, including me.

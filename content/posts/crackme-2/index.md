@@ -1,6 +1,6 @@
 ---
 title: "Crackme challenge #2"
-date: 2019-10
+date: 2019-10-02
 ---
 
 Today we'll be reversing a crackme by Saduz called "Visual c++ crackme", which can be found here: https://crackmes.one/crackme/5c1d6f5f33c5d41e58e005f5

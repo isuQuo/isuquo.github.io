@@ -1,6 +1,6 @@
 ---
 title: "Flare-on 2019 challenge #2"
-date: 2019-10
+date: 2019-10-06
 ---
 
 Welcome to the second Flare-on 2019 write up. For this one, we'll be looking at an application called "Overlong", which is also the name of the challenge.
