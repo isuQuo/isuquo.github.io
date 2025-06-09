@@ -25,7 +25,7 @@ No downloads folder. Need to look elsewhere.
 
 The full path is determined by mounting the drive and analyzing the file system. The absence of a Downloads folder suggests the document was stored in an alternative location.
 
-## ShellbagsExplorer UsrClass.dat - Explain what this file is
+## ShellbagsExplorer UsrClass.dat
 
 ![](images/3.png)
 
@@ -72,7 +72,7 @@ Found this on MACB Timestamps: https://cscclabs.medium.com/mac-b-timestamps-86b4
 
 We can explore the MFT file for more information on this file.
 
-`python [analyzeMFT.py](http://analyzeMFT.py) -f $MFT -o output.csv`
+`python analyzeMFT.py -f $MFT -o output.csv`
 
 After searching for the exe in Notepad++, we can see the original creation time.
 
@@ -125,7 +125,7 @@ The tool we need to use is `bmc-tools.py`
 
 The cache file can be found in `C:\Users\<USER>\AppData\Local\Microsoft\Terminal Server Client\Cache\`
 
-After generating an output with `python [bmc-tools.py](http://bmc-tools.py) -s cache -d output -b`
+After generating an output with `python bmc-tools.py -s cache -d output -b`
 
 We export 1000+ small BMP images.
 
