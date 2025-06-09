@@ -18,8 +18,8 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
-          # extended: true
+          hugo-version: '0.147.8'  # Specify a stable version (current as of June 09, 2025)
+          extended: true  # Enable extended version for SCSS/SASS support
 
       - name: Build
         run: hugo --minify
