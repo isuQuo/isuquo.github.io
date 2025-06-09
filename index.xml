@@ -2,14 +2,18 @@
 &lt;p>We use various DFIR tools to examine the investigation files.&lt;/p>
 &lt;p>The challenge is marked as HARD by LetsDefend: &lt;a href="https://app.letsdefend.io/challenge/windows-forensics">https://app.letsdefend.io/challenge/windows-forensics&lt;/a>&lt;/p>
 &lt;h1 id="windows-forensics">Windows Forensics&lt;/h1>
-&lt;h2 id="initial-access-was-made-through-a-malicious-document-delivered-through-email-what-was-the-full-path-where-the-document-was-downloaded">Initial Access was made through a Malicious Document delivered through email. What was the full path where the document was downloaded?&lt;/h2>
+&lt;ol>
+&lt;li>Initial Access was made through a Malicious Document delivered through email. What was the full path where the document was downloaded?&lt;/li>
+&lt;/ol>
 &lt;p>Trouble exporting files as is.&lt;/p>
 &lt;p>Needed to mount the drive to a logical disk to view the [root] directory.&lt;/p></description></item><item><title>Windows Theme Spoofing</title><link>https://isuquo.github.io/posts/windows-theme-spoofing/</link><pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate><guid>https://isuquo.github.io/posts/windows-theme-spoofing/</guid><description>&lt;p>This challenge is marked as HARD by LetsDefend: &lt;a href="https://app.letsdefend.io/challenge/windows-theme-spoofing">https://app.letsdefend.io/challenge/windows-theme-spoofing&lt;/a>&lt;/p>
 &lt;p>We use a combination of Wireshark and MFT Viewer to analyze the investigation files using DFIR methods.&lt;/p>
 &lt;h1 id="windows-theme-spoofing">Windows Theme Spoofing&lt;/h1>
 &lt;p>For more information on the vulnerability we&amp;rsquo;ll be inspecting: &lt;a href="https://www.rbtsec.com/blog/cve-2024-21320-windows-themes-spoofing-vulnerability-walkthrough/">https://www.rbtsec.com/blog/cve-2024-21320-windows-themes-spoofing-vulnerability-walkthrough/&lt;/a>&lt;/p>
 &lt;p>This CVE-2024-21320 exploit involves a malicious Windows theme that triggers NTLM hash disclosure without user interaction. The analysis is conducted using the following steps.&lt;/p>
-&lt;h2 id="can-you-identify-the-attackers-file-share-path-utilized-to-exploit-the-cve">Can you identify the Attacker&amp;rsquo;s file share path utilized to exploit the CVE?&lt;/h2>
+&lt;ol>
+&lt;li>Can you identify the Attacker&amp;rsquo;s file share path utilized to exploit the CVE?&lt;/li>
+&lt;/ol>
 &lt;p>&lt;img loading="lazy" src="https://isuquo.github.io/posts/windows-theme-spoofing/images/1.png">&lt;/p></description></item><item><title>Forensics</title><link>https://isuquo.github.io/posts/forensics/</link><pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate><guid>https://isuquo.github.io/posts/forensics/</guid><description>&lt;h1 id="forensics">Forensics&lt;/h1>
 &lt;p>The following challenge is marked as HARD by TryHackMe: &lt;a href="https://tryhackme.com/room/forensics">https://tryhackme.com/room/forensics&lt;/a>&lt;/p>
 &lt;pre tabindex="0">&lt;code>remnux@remnux:~/Downloads$ vol.py -f victim.raw imageinfo
@@ -27,7 +31,9 @@ KPCR for CPU 0 : 0xfffff80002843d00L
 KUSER_SHARED_DATA : 0xfffff78000000000L
 Image date and time : 2019-05-02 18:11:45 UTC+0000
 Image local date and time : 2019-05-02 11:11:45 -0700
-&lt;/code>&lt;/pre>&lt;h1 id="what-is-the-operating-system-of-this-dump-file-os-name">What is the Operating System of this Dump file? (OS name)&lt;/h1>
+&lt;/code>&lt;/pre>&lt;ol>
+&lt;li>What is the Operating System of this Dump file? (OS name)&lt;/li>
+&lt;/ol>
 &lt;p>&lt;code>vol -f victim.raw windows.info&lt;/code>&lt;/p></description></item><item><title>SBTVIP CTF Challenges</title><link>https://isuquo.github.io/posts/sbtvip/</link><pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate><guid>https://isuquo.github.io/posts/sbtvip/</guid><description>&lt;p>Over the past four weeks, SecurityBlue.Team have released their very first CTF event. During the first two weeks, the CTF was only available to VIP members. The last two weeks were open to the public. As it stands, there are currently over 300 participants. During the VIP tenure, there were ~50 participants, including me.&lt;/p>
 &lt;p>As the CTF is still open and very much active, I will not be revealing the flags. As such, I will showcase the methods I used to retrieve these flags for my favourite challenges. If you wish to have a go, visit &lt;a href="https://sbtvip.ctfd.io/challenges">https://sbtvip.ctfd.io/challenges&lt;/a>, make an account and get going!&lt;/p></description></item><item><title>Operation Chimera 2019 - Digital Forensics Challenge</title><link>https://isuquo.github.io/posts/chimera/</link><pubDate>Tue, 11 Feb 2020 00:00:00 +0000</pubDate><guid>https://isuquo.github.io/posts/chimera/</guid><description>&lt;p>Operation Chimera was a course created by Security Blue Team. It ran from the 1st of October to the 31st of November. Various modules were released during this time to give the user an insight into the world of security and the challenges that may lie ahead.&lt;/p>
 &lt;p>Security Blue Team can be found here: &lt;a href="https://securityblue.team/">https://securityblue.team/&lt;/a>&lt;/p>
