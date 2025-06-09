@@ -11,7 +11,7 @@ The challenge is marked as HARD by LetsDefend: https://app.letsdefend.io/challen
 
 # Windows Forensics
 
-## Initial Access was made through a Malicious Document delivered through email. What was the full path where the document was downloaded?
+1. Initial Access was made through a Malicious Document delivered through email. What was the full path where the document was downloaded?
 
 Trouble exporting files as is.
 
@@ -25,13 +25,13 @@ No downloads folder. Need to look elsewhere.
 
 The full path is determined by mounting the drive and analyzing the file system. The absence of a Downloads folder suggests the document was stored in an alternative location.
 
-## ShellbagsExplorer UsrClass.dat
+2. ShellbagsExplorer UsrClass.dat
 
 ![](images/3.png)
 
 UsrClass.dat is a registry hive file located in `C:\Users\<Username>\NTUSER.DAT\Classes` that stores user-specific shell settings, including folder views and recently accessed directories. ShellbagsExplorer is used to parse this file to reconstruct user activity, such as file access locations [see Microsoft documentation on registry hives](https://docs.microsoft.com/en-us/windows/win32/sysinfo/registry-hives).
 
-## What's the document name? (The document which was delivered via phishing)
+3. What's the document name? (The document which was delivered via phishing)
 
 We know it’s in the Downloads folder. There is no downloads folder in the retrieved files.
 
@@ -47,7 +47,7 @@ It prints the original file name, and the file was deleted on `2022-08-21 13:03:
 
 The document name is extracted using RBCmd, which recovers the original filename from the Recycle Bin metadata. The deletion timestamp indicates when it was removed.
 
-## What's the stager name which connected to the attacker C2 server (Full path\name)
+4. What's the stager name which connected to the attacker C2 server (Full path\name)
 
 Given the deletion time of the document file, we can navigate to the Prefetch directory within FTK Imager to understand what programs were executing around that time. Sort by date modified.
 
@@ -61,7 +61,7 @@ We can see the original directory this executable was found in.
 
 The stager executable is identified through Prefetch data, with PEcmd providing the original directory and filename from the prefetch file.
 
-## The attacker manipulated MACB Timestamps of the stager executable to confuse Analysts. Analyze the timestamps of the stager and verify the original timestamp and tampered one. (ORIGINAL TIMESTAMP : TAMPERED TIMESTAMP)
+5. The attacker manipulated MACB Timestamps of the stager executable to confuse Analysts. Analyze the timestamps of the stager and verify the original timestamp and tampered one. (ORIGINAL TIMESTAMP : TAMPERED TIMESTAMP)
 
 Found this on MACB Timestamps: https://cscclabs.medium.com/mac-b-timestamps-86b40d7e7144
 
@@ -88,7 +88,7 @@ The tampered time is the STD, which again, can be altered by user level processe
 
 Timestamps are analyzed using the MFT file, comparing the $STANDARD_INFO (tampered) and $FILE_NAME (original) attributes to identify discrepancies.
 
-## The attacker set up persistence by manipulating registry keys. All we know is that GlobalFlags image file technique was used to set up persistence. When exiting a certain process, the attacker persistence executable is executed. What's the name of that process?
+6. The attacker set up persistence by manipulating registry keys. All we know is that GlobalFlags image file technique was used to set up persistence. When exiting a certain process, the attacker persistence executable is executed. What's the name of that process?
 
 https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/gflags-details
 
@@ -98,7 +98,7 @@ https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/gflags-detai
 
 Setting GlobalFlags involves configuring the Windows Global Flag registry settings, typically under `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager`, to enable debugging or monitoring features. In this context, it is used with the Silent Process Exit (SPE) mechanism to execute a persistence executable when a monitored process exits [see Microsoft documentation on GFlags](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/gflags).
 
-## Whats the full path alongside name of the executable which is setup for persistence? (FULLPATH\Filename)
+7. Whats the full path alongside name of the executable which is setup for persistence? (FULLPATH\Filename)
 
 https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/registry-entries-for-silent-process-exit
 
@@ -111,7 +111,7 @@ https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/registry-ent
 
 The full path and name of the persistence executable are determined from the registry key `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SilentProcessExit`.
 
-## The attacker logged in via RDP and then performed lateral movement. Attacker accessed an Internal network-connected device via RDP. What command was run on cmd after successful RDP into other Windows machine?
+8. The attacker logged in via RDP and then performed lateral movement. Attacker accessed an Internal network-connected device via RDP. What command was run on cmd after successful RDP into other Windows machine?
 
 There are RDP Event logs
 
@@ -133,13 +133,13 @@ No tools exist on the machine to piece together the puzzle, so it’s manual wor
 
 The command run on the CMD prompt is reconstructed from the RDP bitmap cache using `bmc-tools.py`, requiring manual analysis of exported BMP images.
 
-## The attacker tried to download a tool from the user's browser in that second machine. What's the tool name? (name.ext)
+9. The attacker tried to download a tool from the user's browser in that second machine. What's the tool name? (name.ext)
 
 I answered this question, tediously, through the previous method.
 
 The tool name is identified through manual analysis of the RDP bitmap cache images generated by `bmc-tools.py`.
 
-## What command was executed which resulted in privilege escalation?
+10. What command was executed which resulted in privilege escalation?
 
 When reviewing the SYSTEM event logs, there are no 4688 events, but we can see a peculiar log which registers a service.
 
@@ -149,7 +149,7 @@ Researching more on the format of this command and what it’s doing led me to t
 
 The command `cmd.exe /c echo kyvckn > \\.\pipe\kyvckn` facilitates privilege escalation through named pipe token impersonation. This technique involves creating a named pipe and using it to impersonate a higher-privileged token, often by exploiting a service or process with elevated rights. The attacker writes to the pipe (`kyvckn`), allowing them to steal or duplicate the token for unauthorized privilege elevation [see details on named pipe impersonation](https://docs.microsoft.com/en-us/windows/win32/ipc/named-pipes).
 
-## What framework was used by the attacker?
+11. What framework was used by the attacker?
 
 This command can be used by the Metasploit framework (Meterpreter).
 

@@ -26,7 +26,7 @@ Image date and time : 2019-05-02 18:11:45 UTC+0000
 Image local date and time : 2019-05-02 11:11:45 -0700
 ```
 
-# What is the Operating System of this Dump file? (OS name)
+1. What is the Operating System of this Dump file? (OS name)
 
 `vol -f victim.raw windows.info`
 
@@ -58,7 +58,7 @@ PE TimeDateStamp	Tue Mar  4 08:38:19 2014
 
 The imageinfo output confirms the victim.raw is a Windows 7 SP1 x64 memory dump.
 
-# What is the PID of SearchIndexer?
+2. What is the PID of SearchIndexer?
 
 Simple command:
 
@@ -70,13 +70,13 @@ Simple command:
 2180
 ```
 
-# What is the last directory accessed by the user?
+3. What is the last directory accessed by the user?
 
 `vol.py -f victim.raw --profile=Win7SP1x64 shellbags --output=html --output-file=shellbags.html`
 
 ![](images/1.PNG)
 
-# There are many suspicious open ports; which one is it? (ANSWER format: protocol:port)
+4. There are many suspicious open ports; which one is it? (ANSWER format: protocol:port)
 
 `vol.py -f victim.raw --profile=Win7SP1x64 netscan`
 
@@ -194,7 +194,7 @@ Answer: UDP:5005
 
 We also see TCP:554 for the same process. It appears the attack might be related to some form of media attack.
 
-# Vads tag and execute protection are strong indicators of malicious processes; can you find which they are? (ANSWER format: Pid1;Pid2;Pid3)
+5. Vads tag and execute protection are strong indicators of malicious processes; can you find which they are? (ANSWER format: Pid1;Pid2;Pid3)
 
 - VADs (Virtual Address Descriptors): These are data structures in Windows that manage a process's virtual memory, detailing allocated memory ranges, protection settings, and tags. The "Vad" tag indicates a standard VAD node, while variants like "VadS" (short VAD) or "VadF" (free VAD) can suggest memory allocated without backing files, often a sign of injected code.
 
@@ -401,7 +401,7 @@ Flags: CommitCharge: 16, MemCommit: 1, PrivateMemory: 1, Protection: 6
 0x000000000028003f 00               DB 0x0
 ```
 
-# In the previous task, you identified malicious processes, so let's dig into them and find some Indicator of Compromise (IOC). You just need to find them and fill in the blanks (You may search for them on VirusTotal to discover more details).
+6. In the previous task, you identified malicious processes, so let's dig into them and find some Indicator of Compromise (IOC). You just need to find them and fill in the blanks (You may search for them on VirusTotal to discover more details).
 
 ```
 remnux@remnux:~/Downloads$ vol.py -f victim.raw --profile=Win7SP1x64 procdump -p 2464 -D procdump/
@@ -431,6 +431,6 @@ It outputs valid URLs
 
 To answer the questions we can just grep. In a black box scenario, we would use a script to check the reputation of these sites on various OSINT sites to match with any TI sources
 
-# What is the unique environmental variable of PID 2464?
+7. What is the unique environmental variable of PID 2464?
 
 `vol.py -f victim.raw --profile=Win7SP1x64 envars -p 2464`
