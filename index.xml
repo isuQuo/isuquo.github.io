@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>My blog</title><link>https://isuquo.github.io/</link><description>Recent content on My blog</description><generator>Hugo -- 0.147.8</generator><language>en-us</language><lastBuildDate>Fri, 06 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://isuquo.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Forensics</title><link>https://isuquo.github.io/posts/forensics/</link><pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate><guid>https://isuquo.github.io/posts/forensics/</guid><description>&lt;h1 id="forensics">Forensics&lt;/h1>
+&lt;p>The following challenge is marked as HARD by TryHackMe: &lt;a href="https://tryhackme.com/room/forensics">https://tryhackme.com/room/forensics&lt;/a>&lt;/p>
 &lt;pre tabindex="0">&lt;code>remnux@remnux:~/Downloads$ vol.py -f victim.raw imageinfo
 Volatility Foundation Volatility Framework 2.6.1
 INFO : volatility.debug : Determining profile based on KDBG search...
