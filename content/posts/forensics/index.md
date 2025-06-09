@@ -5,6 +5,8 @@ date: 2025-06-06
 
 # Forensics
 
+The following challenge is marked as HARD by TryHackMe: https://tryhackme.com/room/forensics
+
 ```
 remnux@remnux:~/Downloads$ vol.py -f victim.raw imageinfo
 
