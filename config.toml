@@ -3,11 +3,9 @@ languageCode = 'en-us'
 title = 'My blog'
 theme = 'PaperMod'
 
-[author]
-name = "Reece Burke"
-
 [params]
-  authorName = "isuquo"
+  [params.author]
+    name = "Reece Burke"
   hideFooter = true
 
   [params.homeInfoParams]
